@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Prestige</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body class="d-flex flex-column min-vh-100 bg-light">
+    <header class="bg-dark text-white py-3 shadow">
+        <div class="container-fluid px-4 d-flex justify-content-between align-items-center">
+            <h1 class="h4 mb-0">Sistema de gestion de eventos</h1>
+            <span class="badge log-primary">2B</span>
+        </div>
+    </header>
+
+    <div class="container-fluid flex-grow-1">
+        <div class="row">
+            <nav class="col-12 col-md-3 col-lg-2 bg-white border-end py-3">
+                <div class="list-group">
+                    <a href="index.html" class="list-group-item list-group-item action active">Eventos</a>
+                    <a href="clientes.html" class="list-group-item list-group-item action">Clientes</a>
+                    <a href="salones.html" class="list-group-item list-group-item action">Salones</a>
+                </div>
+            </nav>
+
+            <main class="col-12 col-md-9 col-lg-10 p-4">
+
+                <!-- alertContainer -->
+                <div id="alertContainer">
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <!-- tituloForm -->
+                    <div id="tituloForm" class="card-header bg-primary text-white">
+                    Registrar Evento
+                    </div>
+
+                    <div class="card-body">
+                        <!-- formEvento -->
+                        <form id="formEvento" novalidate>
+
+                            <div class="col-md-6">
+                                <!-- idEvento -->
+                                <input id="idEvento" type="hidden">
+                            </div>
+
+                            <div class="row g-3">
+
+                                <div class="col-md-6">
+                                    <!-- txtnombreEvento -->
+                                    <label for="txtnombreEvento" class="form-label">Nombre</label>
+                                    <input id="txtnombreEvento" class="form-control" type="text">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <!-- datefechaEvento -->
+                                    <label for="datefechaEvento" class="form-label">Fecha</label>
+                                    <input type="date" class="form-control" id="datefechaEvento">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <!-- txtCliente -->
+                                     <label for="txtCliente" class="form-label">Cliente</label>
+                                     <select id="txtCliente" class="form-select"></select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <!-- txtSalon -->
+                                     <label for="txtSalon" class="form-label">Salon</label>
+                                     <select id="txtSalon" class="form-select"></select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <!-- numcantidadPersonas -->
+                                     <label for="numcantidadPersonas" class="form-label">Cantidad de personas</label>
+                                     <input type="number" class="form-control" step="1" id="numcantidadPersonas">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <!-- numcantidadHoras -->
+                                     <label for="numcantidadHoras" class="form-label">Cantidad de horas</label>
+                                     <input type="number" class="form-control" step="1" id="numcantidadPersonas">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <!-- txtEstado -->
+                                     <label for="txtEstado" class="form-label">Estado</label>
+                                     <select id="txtEstado" class="form-select"></select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <!-- numPagoTotal -->
+                                     <label for="numPagoTotal" class="form-label">Pago Total</label>
+                                     <input type="number" class="form-control" step="0.01" id="numPagoTotal">
+                                </div>
+
+                            </div>
+
+                            <div class="mt-4">
+                                <button type="submit" id="btnGuardar" class="btn btn-success">Guardar</button>
+                                <button type="button" id="btnCancelar" class="btn btn-secondary">Cancelar</button>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+
+                <div class="card shadow-sm">
+                    <div class="card-header bg-dark text-white">Listado de eventos</div>
+                    <div class="card-body table-responsive">
+                        <table class="table table-striped table-hover align-middle">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Nombre</th>
+                                    <th>Fecha</th>
+                                    <th>Cantidad personas</th>
+                                    <th>Cantidad horas</th>
+                                    <th>Estado</th>
+                                    <th>Pago total</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <!-- tablaEventos -->
+                            <tbody id="tablaEventos"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+        <small>Alexander Isaias Hernandez Aviles 20250145</small>
+        <small>Carlos Alejandro Lopez Rodriguez 20250156</small>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
